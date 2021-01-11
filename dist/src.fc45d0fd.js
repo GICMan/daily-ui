@@ -39448,7 +39448,118 @@ var SignUp = function SignUp() {
 };
 
 exports["default"] = SignUp;
-},{"react":"node_modules/react/index.js","gsap":"node_modules/gsap/index.js","../scss/SignUp":"src/scss/SignUp.scss"}],"src/components/dailyIndex.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","gsap":"node_modules/gsap/index.js","../scss/SignUp":"src/scss/SignUp.scss"}],"src/scss/Payment.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"./../assets/Payment-Background.svg":[["Payment-Background.6a2492ff.svg","src/assets/Payment-Background.svg"],"src/assets/Payment-Background.svg"],"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/assets/payment-scan-card.svg":[function(require,module,exports) {
+module.exports = "/payment-scan-card.4ebb5a78.svg";
+},{}],"src/assets/payment-mastercard.svg":[function(require,module,exports) {
+module.exports = "/payment-mastercard.ba88b1e2.svg";
+},{}],"src/components/Payment.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+exports.__esModule = true;
+
+var React = __importStar(require("react"));
+
+require("../scss/Payment.scss");
+
+var payment_scan_card_svg_1 = __importDefault(require("../assets/payment-scan-card.svg"));
+
+var payment_mastercard_svg_1 = __importDefault(require("../assets/payment-mastercard.svg"));
+
+var Payment = function Payment() {
+  return React.createElement("div", {
+    className: "payment-page"
+  }, React.createElement("div", {
+    className: "payment-container"
+  }, React.createElement("button", {
+    className: "back"
+  }, React.createElement("i", {
+    className: "fas fa-chevron-left"
+  }), " Back To Cart"), React.createElement("h3", {
+    className: "title"
+  }, "Enter Card Information"), React.createElement("div", {
+    className: "card"
+  }, React.createElement("img", {
+    className: "scan-icon",
+    src: payment_scan_card_svg_1["default"]
+  }), React.createElement("img", {
+    className: "mastercard",
+    src: payment_mastercard_svg_1["default"]
+  }), React.createElement("div", {
+    className: "info-container"
+  }, React.createElement("h3", {
+    className: "number"
+  }, "1234 1234 1234 1234"), React.createElement("span", {
+    className: "name"
+  }, "John Doe"), React.createElement("span", {
+    className: "date"
+  }, "01/01"))), React.createElement("div", {
+    className: "shadow"
+  }), React.createElement("button", {
+    className: "re-scan"
+  }, "Scan Card"), React.createElement("form", {
+    className: "form-container"
+  }, React.createElement("div", {
+    className: "name form-section"
+  }, React.createElement("label", null, "Card Holder Name"), React.createElement("input", {
+    type: "text",
+    placeholder: "i.e. John Doe"
+  }), React.createElement("div", {
+    className: "bar"
+  })), React.createElement("div", {
+    className: "number form-section"
+  }, React.createElement("label", null, "Card Number"), React.createElement("input", {
+    type: "text",
+    placeholder: "1234 1234 1234 1234"
+  }), React.createElement("div", {
+    className: "bar"
+  })), React.createElement("div", {
+    className: "form-section"
+  }, React.createElement("div", {
+    className: "cvc form-section"
+  }, React.createElement("label", null, "CVC"), React.createElement("input", {
+    type: "text",
+    placeholder: "123"
+  }), React.createElement("div", {
+    className: "bar"
+  })), React.createElement("div", {
+    className: "date"
+  }, React.createElement("label", null, "Expiration Date"), React.createElement("input", {
+    type: "text",
+    placeholder: "00/00"
+  }), React.createElement("div", {
+    className: "bar"
+  })))), React.createElement("button", {
+    className: "confirm"
+  }, "Confirm Payment")));
+};
+
+exports["default"] = Payment;
+},{"react":"node_modules/react/index.js","../scss/Payment.scss":"src/scss/Payment.scss","../assets/payment-scan-card.svg":"src/assets/payment-scan-card.svg","../assets/payment-mastercard.svg":"src/assets/payment-mastercard.svg"}],"src/assets/thumbnails/SignUp.png":[function(require,module,exports) {
+module.exports = "/SignUp.142d503b.png";
+},{}],"src/assets/thumbnails/Payment.png":[function(require,module,exports) {
+module.exports = "/Payment.b39bd444.png";
+},{}],"src/components/dailyIndex.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -39473,14 +39584,128 @@ var React = __importStar(require("react"));
 
 var SignUp_1 = __importDefault(require("./SignUp"));
 
+var Payment_1 = __importDefault(require("./Payment"));
+
 var dailies = [{
   path: "/SignUp",
-  number: "001",
+  name: "Sign Up",
+  number: 1,
   component: React.createElement(SignUp_1.default, null),
-  style: "Dark"
+  style: "Dark",
+  thumbnail: require("../assets/thumbnails/SignUp.png")
+}, {
+  path: "/Payment",
+  name: "Payment",
+  number: 2,
+  component: React.createElement(Payment_1.default, null),
+  style: "Dark",
+  thumbnail: require("../assets/thumbnails/Payment.png")
 }];
 exports["default"] = dailies;
-},{"react":"node_modules/react/index.js","./SignUp":"src/components/SignUp.tsx"}],"src/index.tsx":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./SignUp":"src/components/SignUp.tsx","./Payment":"src/components/Payment.tsx","../assets/thumbnails/SignUp.png":"src/assets/thumbnails/SignUp.png","../assets/thumbnails/Payment.png":"src/assets/thumbnails/Payment.png"}],"src/scss/Home.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/scss/DailyCard.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/DailyCard.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+exports.__esModule = true;
+
+var React = __importStar(require("react"));
+
+var react_router_dom_1 = require("react-router-dom");
+
+require("../scss/DailyCard");
+
+var DailyCard = function DailyCard(props) {
+  return React.createElement("div", {
+    className: "card-container"
+  }, React.createElement("div", {
+    className: "info-container"
+  }, React.createElement("h2", null, props.number.toLocaleString("en-US", {
+    minimumIntegerDigits: 3
+  })), React.createElement("h3", null, props.name), React.createElement(react_router_dom_1.Link, {
+    to: props.link
+  }, "Check it out")), React.createElement("img", {
+    src: props.thumbnail
+  }));
+};
+
+exports["default"] = DailyCard;
+},{"react":"node_modules/react/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","../scss/DailyCard":"src/scss/DailyCard.scss"}],"src/components/Home.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+var __importDefault = this && this.__importDefault || function (mod) {
+  return mod && mod.__esModule ? mod : {
+    "default": mod
+  };
+};
+
+exports.__esModule = true;
+
+var React = __importStar(require("react"));
+
+require("../scss/Home.scss");
+
+var dailyIndex_1 = __importDefault(require("./dailyIndex"));
+
+var DailyCard_1 = __importDefault(require("./DailyCard"));
+
+var Home = function Home() {
+  return React.createElement("div", {
+    className: "home-page"
+  }, React.createElement("h1", null, "Gabriel Casselman's DailyUI"), React.createElement("p", null, "I\u2019m designing and implementing 100 challenges given by DailyUI in Figma and then React. Follow my progress here!"), React.createElement("a", {
+    href: "https://www.dailyui.co"
+  }, React.createElement("span", null, "dailyui.co "), "for more info"), React.createElement("div", {
+    className: "completed"
+  }, React.createElement("span", null, dailyIndex_1["default"].length.toLocaleString("en-US", {
+    minimumIntegerDigits: 3
+  }), "/100"), "Challenges Completed"), React.createElement("div", {
+    className: "progress"
+  }, React.createElement("span", {
+    style: {
+      width: dailyIndex_1["default"].length + "%"
+    }
+  })), React.createElement("div", {
+    className: "all"
+  }, dailyIndex_1["default"].map(function (daily, index) {
+    return React.createElement(DailyCard_1.default, {
+      number: daily.number,
+      name: daily.name,
+      link: daily.path,
+      thumbnail: daily.thumbnail
+    });
+  })));
+};
+
+exports["default"] = Home;
+},{"react":"node_modules/react/index.js","../scss/Home.scss":"src/scss/Home.scss","./dailyIndex":"src/components/dailyIndex.tsx","./DailyCard":"src/components/DailyCard.tsx"}],"src/index.tsx":[function(require,module,exports) {
 "use strict";
 
 var __importStar = this && this.__importStar || function (mod) {
@@ -39513,6 +39738,8 @@ require("@fortawesome/fontawesome-free/css/all.css");
 
 var dailyIndex_1 = __importDefault(require("./components/dailyIndex"));
 
+var Home_1 = __importDefault(require("./components/Home"));
+
 function App() {
   return React.createElement(react_router_dom_1.BrowserRouter, null, React.createElement(react_router_dom_1.Switch, null, dailyIndex_1["default"].map(function (daily, index) {
     return React.createElement(react_router_dom_1.Route, {
@@ -39520,12 +39747,20 @@ function App() {
       path: daily.path
     }, React.createElement("h1", {
       className: "daily-number"
-    }, daily.number), daily.component);
-  })));
+    }, React.createElement(react_router_dom_1.Link, {
+      to: "/"
+    }, React.createElement("i", {
+      className: "fas fa-arrow-left"
+    })), daily.number.toLocaleString("en-US", {
+      minimumIntegerDigits: 3
+    })), daily.component);
+  }), React.createElement(react_router_dom_1.Route, {
+    path: "/"
+  }, React.createElement(Home_1.default, null))));
 }
 
 react_dom_1["default"].render(React.createElement(App, null), document.getElementById("root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./scss/main.scss":"src/scss/main.scss","@fortawesome/fontawesome-free/css/all.css":"node_modules/@fortawesome/fontawesome-free/css/all.css","./components/dailyIndex":"src/components/dailyIndex.tsx"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","react-router-dom":"node_modules/react-router-dom/esm/react-router-dom.js","./scss/main.scss":"src/scss/main.scss","@fortawesome/fontawesome-free/css/all.css":"node_modules/@fortawesome/fontawesome-free/css/all.css","./components/dailyIndex":"src/components/dailyIndex.tsx","./components/Home":"src/components/Home.tsx"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -39553,7 +39788,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52191" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57210" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

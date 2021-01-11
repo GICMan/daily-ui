@@ -1,0 +1,234 @@
+.payment-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d1d1d;
+
+  display: grid;
+  place-content: center;
+
+  .payment-container {
+    font-family: "Poppins", sans-serif;
+    width: 250px;
+    height: 550px;
+    background-color: white;
+    background-image: url("../assets/Payment-Background.svg");
+    background-size: cover;
+
+    border-radius: 15px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .back {
+      align-self: flex-start;
+      background: none;
+      border: none;
+      margin: 20px 0px 0px 10px;
+      padding: 5px;
+
+      color: #fedaff;
+      vertical-align: middle;
+      font-size: 1em;
+      font-weight: 500;
+
+      border-radius: 5px;
+    }
+
+    .back:hover {
+      color: #fc9aff;
+      cursor: pointer;
+    }
+
+    .back:focus {
+      color: #fc9aff;
+      outline: none;
+    }
+
+    .back:active {
+      background-color: #fa3a97;
+      color: #fc9aff;
+    }
+
+    .title {
+      color: #fedaff;
+      font-size: 1.05em;
+      font-weight: 400;
+
+      margin: 5px 0px 10px 0px;
+    }
+
+    .card {
+      width: 200px;
+      height: 140px;
+
+      border-radius: 15px;
+      border: solid 1px rgba(255, 255, 255, 0.425);
+      border-right: solid 1px rgba(255, 255, 255, 0.123);
+      border-bottom: solid 1px rgba(255, 255, 255, 0.123);
+      background-color: rgba(255, 255, 255, 0.3);
+      backdrop-filter: blur(10px);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .mastercard {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+      }
+
+      .info-container {
+        color: #fedaff;
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37);
+        align-self: flex-end;
+        margin: 15px 0;
+        padding: 0 20px;
+
+        .number {
+          margin: 5px 0;
+          font-size: 1.05em;
+        }
+
+        .date {
+          float: right;
+        }
+      }
+
+      .scan-icon {
+        display: block;
+        display: none;
+        height: 60px;
+      }
+    }
+
+    .shadow {
+      z-index: 0;
+      position: absolute;
+      top: 345px;
+      border-radius: 50%;
+      filter: blur(10px);
+      height: 20px;
+      width: 230px;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+
+    .re-scan {
+      z-index: 2;
+      background: none;
+      border: none;
+      color: #fedaff;
+      font-size: 0.7em;
+      margin: 6px;
+      margin-bottom: 10px;
+      padding: 5px;
+      border-radius: 6px;
+    }
+
+    .re-scan:hover {
+      cursor: pointer;
+      color: #fca7ff;
+    }
+
+    .re-scan:focus {
+      color: #fca7ff;
+      outline: none;
+    }
+
+    .re-scan:active {
+      background-color: #f738fa;
+      color: #fc9aff;
+    }
+
+    .form-container {
+      width: 200px;
+      padding-top: 5px;
+
+      .form-section {
+        margin: 10px 0px;
+      }
+
+      label {
+        font-weight: 200;
+        font-size: 0.8em;
+        color: #a00268;
+      }
+
+      input {
+        width: 100%;
+        font-size: 1.2em;
+        background: none;
+        border: none;
+        font-weight: 600;
+        margin: 0px 0 5px 0;
+        padding: 2px 6px;
+        color: #a00268;
+        border-radius: 6px;
+      }
+
+      input::placeholder {
+        color: #e2a1e3;
+      }
+
+      input:focus {
+        outline: none;
+        background-color: #fcc6fc;
+      }
+
+      .bar {
+        width: 100%;
+        height: 3px;
+        background: rgb(248, 0, 119);
+        background: linear-gradient(
+          90deg,
+          rgba(248, 0, 119, 1) 0%,
+          rgba(250, 0, 255, 1) 100%
+        );
+        border-radius: 1.5px;
+      }
+
+      .date {
+        display: inline-block;
+        width: 100px;
+      }
+
+      .cvc {
+        width: 40px;
+        float: right;
+        text-align: right;
+        margin: 0;
+
+        input {
+          width: 100%;
+          margin: none;
+        }
+      }
+    }
+    .confirm {
+      display: block;
+      width: 200px;
+      height: 30px;
+      color: #fedaff;
+      border-radius: 15px;
+      border: none;
+      background: radial-gradient(
+        86.04% 1335.66% at 5.58% 19%,
+        #f80077 0%,
+        #fa00ff 100%
+      );
+      margin-top: 10px;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .confirm:hover {
+      cursor: pointer;
+      color: #fca7ff;
+    }
+
+    .confirm:focus {
+      outline: none;
+      color: #fca7ff;
+    }
+  }
+}
