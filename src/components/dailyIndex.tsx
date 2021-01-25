@@ -1,6 +1,7 @@
 import * as React from "react";
 import SignUp from "./SignUp";
 import Payment from "./Payment";
+import Landing from "./Landing";
 
 interface Daily {
   path: string;
@@ -27,6 +28,13 @@ const dailies: Daily[] = [
     component: <Payment />,
     style: "Dark",
     thumbnail: require("../assets/thumbnails/Payment.png")
+  },
+  {
+    path: "/Landing",
+    name: "Landing",
+    number: 3,
+    component: <Landing />,
+    style: "Dark"
   }
 ];
 

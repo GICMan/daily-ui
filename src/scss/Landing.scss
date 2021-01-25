@@ -1,0 +1,21 @@
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d1d1d;
+
+  display: grid;
+  place-content: center;
+
+  .landing-container {
+    font-family: "Poppins", sans-serif;
+    width: 250px;
+    height: 550px;
+
+    border-radius: 15px;
+    background-color: #12107a;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

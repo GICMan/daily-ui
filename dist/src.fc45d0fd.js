@@ -39478,6 +39478,8 @@ var __importDefault = this && this.__importDefault || function (mod) {
 
 exports.__esModule = true;
 
+var react_1 = require("react");
+
 var React = __importStar(require("react"));
 
 require("../scss/Payment.scss");
@@ -39487,6 +39489,40 @@ var payment_scan_card_svg_1 = __importDefault(require("../assets/payment-scan-ca
 var payment_mastercard_svg_1 = __importDefault(require("../assets/payment-mastercard.svg"));
 
 var Payment = function Payment() {
+  var _a = react_1.useState(""),
+      name = _a[0],
+      setName = _a[1];
+
+  var _b = react_1.useState(""),
+      number = _b[0],
+      setNumber = _b[1];
+
+  var _c = react_1.useState(""),
+      date = _c[0],
+      setDate = _c[1];
+
+  function handleNumber(value) {
+    var v = value.replace(/\s+/g, "").replace(/[^-0-9]/gi, ""); //remove spaces and non-digits
+
+    var parts = v.match(/.{1,4}/g); // split up into groups of 4 numbers
+
+    setNumber(parts ? parts.slice(0, 4).join(" ") : "");
+  }
+
+  function handleDate(value) {
+    var v = value.replace(/\s+/g, "").replace(/[^-0-9]/gi, ""); //remove spaces and non-digits
+
+    var parts = v.match(/.{1,2}/g); //split into two groups of two numbers
+
+    setDate(parts ? parts.slice(0, 2).join("/") : "");
+  }
+
+  function reset() {
+    setNumber("");
+    setDate("");
+    setName("");
+  }
+
   return React.createElement("div", {
     className: "payment-page"
   }, React.createElement("div", {
@@ -39499,30 +39535,37 @@ var Payment = function Payment() {
     className: "title"
   }, "Enter Card Information"), React.createElement("div", {
     className: "card"
-  }, React.createElement("img", {
-    className: "scan-icon",
-    src: payment_scan_card_svg_1["default"]
-  }), React.createElement("img", {
+  }, name || number || date ? React.createElement(React.Fragment, null, React.createElement("h3", {
+    className: "number"
+  }, number), React.createElement("div", {
+    className: "info-container"
+  }, React.createElement("span", {
+    className: "name"
+  }, name), React.createElement("span", {
+    className: "date"
+  }, date)), React.createElement("img", {
     className: "mastercard",
     src: payment_mastercard_svg_1["default"]
-  }), React.createElement("div", {
-    className: "info-container"
-  }, React.createElement("h3", {
-    className: "number"
-  }, "1234 1234 1234 1234"), React.createElement("span", {
-    className: "name"
-  }, "John Doe"), React.createElement("span", {
-    className: "date"
-  }, "01/01"))), React.createElement("div", {
+  })) : React.createElement("img", {
+    className: "scan-icon",
+    src: payment_scan_card_svg_1["default"]
+  })), React.createElement("div", {
     className: "shadow"
   }), React.createElement("button", {
-    className: "re-scan"
+    className: "re-scan",
+    onClick: function onClick(e) {
+      return reset();
+    }
   }, "Scan Card"), React.createElement("form", {
     className: "form-container"
   }, React.createElement("div", {
     className: "name form-section"
   }, React.createElement("label", null, "Card Holder Name"), React.createElement("input", {
     type: "text",
+    value: name,
+    onChange: function onChange(e) {
+      return setName(e.target.value);
+    },
     placeholder: "i.e. John Doe"
   }), React.createElement("div", {
     className: "bar"
@@ -39530,6 +39573,10 @@ var Payment = function Payment() {
     className: "number form-section"
   }, React.createElement("label", null, "Card Number"), React.createElement("input", {
     type: "text",
+    value: number,
+    onChange: function onChange(e) {
+      return handleNumber(e.target.value);
+    },
     placeholder: "1234 1234 1234 1234"
   }), React.createElement("div", {
     className: "bar"
@@ -39546,7 +39593,11 @@ var Payment = function Payment() {
     className: "date"
   }, React.createElement("label", null, "Expiration Date"), React.createElement("input", {
     type: "text",
-    placeholder: "00/00"
+    placeholder: "00/00",
+    value: date,
+    onChange: function onChange(e) {
+      return handleDate(e.target.value);
+    }
   }), React.createElement("div", {
     className: "bar"
   })))), React.createElement("button", {
@@ -39555,7 +39606,40 @@ var Payment = function Payment() {
 };
 
 exports["default"] = Payment;
-},{"react":"node_modules/react/index.js","../scss/Payment.scss":"src/scss/Payment.scss","../assets/payment-scan-card.svg":"src/assets/payment-scan-card.svg","../assets/payment-mastercard.svg":"src/assets/payment-mastercard.svg"}],"src/assets/thumbnails/SignUp.png":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","../scss/Payment.scss":"src/scss/Payment.scss","../assets/payment-scan-card.svg":"src/assets/payment-scan-card.svg","../assets/payment-mastercard.svg":"src/assets/payment-mastercard.svg"}],"src/scss/Landing.scss":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"node_modules/parcel-bundler/src/builtins/css-loader.js"}],"src/components/Landing.tsx":[function(require,module,exports) {
+"use strict";
+
+var __importStar = this && this.__importStar || function (mod) {
+  if (mod && mod.__esModule) return mod;
+  var result = {};
+  if (mod != null) for (var k in mod) {
+    if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+  }
+  result["default"] = mod;
+  return result;
+};
+
+exports.__esModule = true;
+
+var React = __importStar(require("react"));
+
+require("../scss/Landing.scss");
+
+var Landing = function Landing() {
+  return React.createElement("div", {
+    className: "landing-page"
+  }, React.createElement("div", {
+    className: "landing-container"
+  }));
+};
+
+exports["default"] = Landing;
+},{"react":"node_modules/react/index.js","../scss/Landing.scss":"src/scss/Landing.scss"}],"src/assets/thumbnails/SignUp.png":[function(require,module,exports) {
 module.exports = "/SignUp.142d503b.png";
 },{}],"src/assets/thumbnails/Payment.png":[function(require,module,exports) {
 module.exports = "/Payment.b39bd444.png";
@@ -39586,6 +39670,8 @@ var SignUp_1 = __importDefault(require("./SignUp"));
 
 var Payment_1 = __importDefault(require("./Payment"));
 
+var Landing_1 = __importDefault(require("./Landing"));
+
 var dailies = [{
   path: "/SignUp",
   name: "Sign Up",
@@ -39600,9 +39686,15 @@ var dailies = [{
   component: React.createElement(Payment_1.default, null),
   style: "Dark",
   thumbnail: require("../assets/thumbnails/Payment.png")
+}, {
+  path: "/Landing",
+  name: "Landing",
+  number: 3,
+  component: React.createElement(Landing_1.default, null),
+  style: "Dark"
 }];
 exports["default"] = dailies;
-},{"react":"node_modules/react/index.js","./SignUp":"src/components/SignUp.tsx","./Payment":"src/components/Payment.tsx","../assets/thumbnails/SignUp.png":"src/assets/thumbnails/SignUp.png","../assets/thumbnails/Payment.png":"src/assets/thumbnails/Payment.png"}],"src/scss/Home.scss":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./SignUp":"src/components/SignUp.tsx","./Payment":"src/components/Payment.tsx","./Landing":"src/components/Landing.tsx","../assets/thumbnails/SignUp.png":"src/assets/thumbnails/SignUp.png","../assets/thumbnails/Payment.png":"src/assets/thumbnails/Payment.png"}],"src/scss/Home.scss":[function(require,module,exports) {
 var reloadCSS = require('_css_loader');
 
 module.hot.dispose(reloadCSS);
@@ -39788,7 +39880,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57210" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "52689" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

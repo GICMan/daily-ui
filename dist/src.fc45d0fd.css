@@ -4799,32 +4799,41 @@ readers do not read off random characters that represent icons */
   border-bottom: solid 1px rgba(255, 255, 255, 0.123);
   background-color: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(10px);
+  padding: 15px;
+  box-sizing: border-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
 }
 .payment-page .payment-container .card .mastercard {
   position: absolute;
   top: 15px;
   left: 15px;
 }
-.payment-page .payment-container .card .info-container {
+.payment-page .payment-container .card .number {
   color: #fedaff;
-  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.37);
-  align-self: flex-end;
-  margin: 15px 0;
-  padding: 0 20px;
+  font-size: 1em;
+  margin-bottom: 5px;
 }
-.payment-page .payment-container .card .info-container .number {
-  margin: 5px 0;
-  font-size: 1.05em;
+.payment-page .payment-container .card .info-container {
+  display: flex;
+  align-items: center;
+  color: #fedaff;
+  width: 100%;
+  overflow: hidden;
 }
-.payment-page .payment-container .card .info-container .date {
-  float: right;
+.payment-page .payment-container .card .info-container .name {
+  flex-grow: 1;
+  font-size: 0.85em;
+  padding-left: 3px;
 }
 .payment-page .payment-container .card .scan-icon {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
   display: block;
-  display: none;
   height: 60px;
 }
 .payment-page .payment-container .shadow {
@@ -4930,6 +4939,23 @@ readers do not read off random characters that represent icons */
   outline: none;
   color: #fca7ff;
 }
+.landing-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #1d1d1d;
+  display: grid;
+  place-content: center;
+}
+.landing-page .landing-container {
+  font-family: "Poppins", sans-serif;
+  width: 250px;
+  height: 550px;
+  border-radius: 15px;
+  background-color: #12107a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .home-page {
   width: 100vw;
   height: 100vh;
@@ -4958,9 +4984,13 @@ readers do not read off random characters that represent icons */
   border-radius: 5px;
   text-decoration: none;
   margin: 10px 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 .home-page a span {
   font-weight: bold;
+}
+.home-page a:hover {
+  background-color: #3a3a3a;
 }
 .home-page .completed {
   color: #b9b9b9;
@@ -5004,6 +5034,7 @@ readers do not read off random characters that represent icons */
   background-color: #484848;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   margin-top: 50px;
+  transition: transform 0.2s;
 }
 .card-container .info-container {
   display: inline-flex;
@@ -5037,6 +5068,11 @@ readers do not read off random characters that represent icons */
   border-radius: 0 5px 5px 0;
   object-fit: cover;
   height: 100%;
+}
+
+.card-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 5px 4px rgba(0, 0, 0, 0.25);
 }
 
 /*# sourceMappingURL=/src.fc45d0fd.css.map */
